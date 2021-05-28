@@ -1,7 +1,7 @@
 <template>
   <div v-if="isExternal" :style="styleExternalIcon" class="svg-external-icon svg-icon" v-on="$listeners" />
-  <svg v-else :class="svgClass" aria-hidden="true" v-on="$listeners">
-    <use :xlink:href="iconName" />
+  <svg v-else :class="svgClass" :style="{width: `${width}`,height:`${height}`}" aria-hidden="true" v-on="$listeners">
+    <use :width="width" :height="height" :xlink:href="iconName" />
   </svg>
 </template>
 
@@ -19,6 +19,14 @@ export default {
     className: {
       type: String,
       default: ''
+    },
+    width: {
+      type: Number,
+      default: 16
+    },
+    height: {
+      type: Number,
+      default: 16
     }
   },
   computed: {

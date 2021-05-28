@@ -1,0 +1,293 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+s,
+i,
+em {
+    font-style: normal;
+    text-decoration: none;
+}
+
+ul, li, ol {
+  list-style: none
+}
+
+// el-pagination
+.el-pagination {
+  text-align: right;
+  padding: 10px 0 0 0;
+
+  .el-pagination__sizes {
+    .el-input {
+      margin: 0;
+    }
+  }
+}
+
+// el-button
+.el-button {
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  &--text {
+    &.danger-text {
+      color: #f2445b;
+    }
+  }
+  [class*=iconfont] + span {
+    margin-left: 5px;
+  }
+}
+.el-button--default {
+  border: 1px solid #e1e1e1;
+}
+
+// el-dialog
+.el-dialog {
+  .el-dialog__header {
+    border-bottom: 1px solid #eee;
+    padding-top: 10px;
+
+    .el-dialog__title {
+      font-weight: 700;
+      font-size: 16px;
+      color: #333333;
+    }
+    
+    .el-dialog__headerbtn {
+      top: 14px;
+    }
+  }
+
+  .el-dialog__body {
+    padding: 0;
+  }
+
+  .el-dialog__footer {
+    border-top: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+}
+
+// el-from
+.el-form {
+  .el-form-item__label {
+    padding-right: 6px;
+  }
+
+  .el-form-item__content {
+    .el-select,
+    .el-cascader {
+      width: 100%;
+    }
+  }
+
+  &--inline {
+    .el-input__inner {
+      width: 180px;
+      padding: 0 5px;
+    }
+  }
+}
+
+// UI: 圆角6px
+// 表单
+.el-input__inner {
+  border-radius: 6px;
+}
+// 分页
+.el-pagination .el-input__inner {
+  border-radius: 3px;
+}
+
+// el-table
+.el-table {
+  &::before {
+    background: #E0E6ED;
+  }
+  &.noBorder::before{
+    height: 0;
+  }
+
+  .el-table__header {
+    th {
+      background: #F5F5F5;
+    }
+  }
+
+  .el-table__body, .el-table__footer, .el-table__header {
+    border-collapse: collapse;
+  }
+
+  .el-table__body {
+    tr.el-table__row--striped {
+      &:hover td,
+      td {
+        background: #f8fbfb !important;
+      }
+    }
+  }
+
+  th.is-leaf, td {
+    border-bottom-color: #E0E6ED;
+  }
+  .cell {
+    font-size: 13px;
+  }
+}
+
+// el-message
+.el-message {
+  top: 10px !important;
+}
+
+// el-message-box__wrapper
+.el-message-box__wrapper {
+  .el-message-box__title {
+    font-size: 17px;
+  }
+  .el-message-box__content{
+    padding: 20px 20px 30px;
+  }
+}
+
+// el-notification
+.el-notification {
+  top: 20px !important;
+}
+
+// el-menu
+.el-menu {
+  .el-menu-item {
+    background-color: transparent !important;
+  }
+}
+
+// 滚动条样式
+/*控制整个滚动条*/
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 6px;
+  height: 8px;
+  background-clip: padding-box;
+}
+
+/*滚动条两端方向按钮*/
+::-webkit-scrollbar-button {
+  background-color: transparent;
+  height: 2px;
+}
+
+/*滚动条中间滑动部分*/
+::-webkit-scrollbar-thumb {
+  background-color: rgba(144,147,153,.3);
+  border-radius: 5px;
+}
+
+/*滚动条右下角区域*/
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+/* 滑块样式 */
+.el-main {
+  .el-switch__label {
+    position: absolute;
+    display: none;
+    color: #fff;
+
+    > span {
+      font-size: 12px;
+    }
+  }
+
+  /*打开时文字位置设置*/
+
+  .el-switch__label--right {
+    z-index: 1;
+    right: -3px;
+  }
+
+  /*关闭时文字位置设置*/
+
+  .el-switch__label--left {
+    z-index: 1;
+    left: 20px;
+  }
+
+  /*显示文字*/
+
+  .el-switch__label.is-active {
+    display: block;
+  }
+
+  .el-switch {
+    text-align: initial;
+  }
+
+  .el-switch .el-switch__core,
+  .el-switch .el-switch__label {
+    width: 50px !important; /*开关按钮的宽度大小*/
+  }
+}
+
+.el-notification__content {
+  margin-top: 2px;
+}
+.el-table th > .cell{
+  font-weight: 700;
+}
+// 穿梭框样式
+.el-transfer {
+  .boderColor {
+    border-color: #E1E1E1;
+  }
+  .el-transfer-panel {
+    .boderColor;
+    width: 220px;
+  }
+  .el-transfer__buttons {
+    padding: 0 10px;
+    .el-button--small {
+      padding: 6px;
+    }
+  }
+  .el-transfer-panel__body {
+    height: 295px;
+  }
+  .el-dialog .el-dialog__header .el-dialog__headerbtn {
+    top: 20px;
+  }
+  .el-transfer-panel .el-transfer-panel__header .el-checkbox .el-checkbox__label {
+    height: 14px;
+    font-family: MicrosoftYaHei;
+    font-size: 14px;
+    color: #333333;
+    line-height: 14px;
+    font-weight: 400;
+    span {
+      color: #999;
+    }
+  }
+  .el-checkbox__original {
+    .boderColor;
+  }
+  .el-transfer-panel .el-transfer-panel__header {
+    background: none;
+    border-bottom: 0;
+  }
+  .el-transfer-panel__filter {
+    margin: 5px 15px 15px;
+  }
+  .el-transfer-panel__filter .el-input__inner {
+    .boderColor;
+    border-radius: 6px;
+  }
+}

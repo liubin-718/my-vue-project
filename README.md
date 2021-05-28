@@ -31,3 +31,7 @@ screenfull script-loader sortablejs tui-editor vue vue-count-to vue-router vue-s
 sass-loader script-ext-html-webpack-plugin serve-static svg-sprite-loader svgo vue-template-compiler
 1. error  in ./src/styles/element-variables.scss
 Syntax Error: TypeError: this.getOptions is not a function  --->  sass-loader版本太高
+
+2.in ./src/components/CommonGlobal/CommonSelect.vue?vue&type=style&index=0&id=92192430&lang=less&scoped=true&
+Syntax Error: TypeError: this.getOptions is not a function  
+运行报错： 像这种有可能是依赖版本过高引起的，比如，这个可能是less
