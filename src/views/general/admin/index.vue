@@ -69,6 +69,22 @@
           :xl="{ span: 6 }"
           style="padding-right: 8px; margin-bottom: 30px"
         >
+          <CommonDialog2
+            :dialogVisible="dialogVisible"
+            width='450px'
+            height="300px"
+            title="attrs传值"
+            @close="closeDialog2"
+            @confirmDialog="confirmDialog2"
+          >
+            <!-- 报错v-slot必须写在template里面 -->
+            <!-- <div v-slot:dialogContent></div> -->
+            <template v-slot:dialogContent>
+              我是弹窗的内容显示区域
+            </template>
+            <template #dialogSubContent>4444</template>         
+           </CommonDialog2>
+          <el-button type="primary" @click="handleOpened">点击</el-button>
           <el-image
             style="width: 150px; height: 150px;border-radius: 50% 50%; border:1px dotted #1890ff"
             :src="uploadPhoto"
@@ -254,6 +270,7 @@ export default {
   },
   data() {
     return {
+      dialogVisible:false,
       scale:1,
       editPhoto:'', // 修改头像
       plusFlag:true,
@@ -277,6 +294,16 @@ export default {
     };
   },
   methods: {
+    confirmDialog2(){
+      this.$message.success('确认成功')
+    },
+    closeDialog2(){
+      this.dialogVisible = false
+    },
+    handleOpened(){
+      this.dialogVisible = true
+      console.log('555');
+    },
     confirmDialog(){
       if (this.dialogOption.type === 'setting') {
         this.saveClicked()
