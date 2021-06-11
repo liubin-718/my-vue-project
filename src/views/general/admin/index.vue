@@ -205,6 +205,15 @@
               :tagData="tagData"
               :selectedData="form.ids"
             ></CommonSelect>
+            <CommonDialogSelect
+              :tagData="tagData"
+              :selectedData="form.ids"
+              @handleChooseTag="handleChooseTag"
+             :configDialogObj="dialogOption1"
+              @handleDialogClose="closeDialog"
+              @confirm='confirm'
+            ></CommonDialogSelect>
+            <el-button type="primary" @click="dakai">dakai</el-button>
           </el-form-item>
         </el-col>
         <el-col
@@ -283,6 +292,9 @@ export default {
       dialogOption: {
         visitly: false,
       },
+      dialogOption1: {
+        visible: false,
+      },
       lineChartData: lineChartData.newVisitis,
       tagData: [], // 标签数据
       form: {
@@ -294,6 +306,17 @@ export default {
     };
   },
   methods: {
+    dakai () {
+      this.dialogOption1.visible = true
+    },
+    confirm (v) {
+      this.dialogOption1.visible = false
+      console.log(v)
+    },
+    handleChooseTag (val) {
+      this.form.ids = val
+      console.log('---------',val,this.tagData)
+    },
     confirmDialog2(){
       this.$message.success('确认成功')
     },
@@ -363,6 +386,9 @@ export default {
     closeDialog(v){
       this.dialogOption = {
         visitly: false,
+      }
+      this.dialogOption1 = {
+        visible: false,
       }
       if (v && v.emitName && v.emitName == 'setting') {
         if (! this.editPhoto) {
